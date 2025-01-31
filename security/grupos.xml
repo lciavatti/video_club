@@ -1,0 +1,23 @@
+<odoo>
+    <!-- Categoría del módulo en Configuración de Usuarios -->
+    <record id="categoria_video_club" model="ir.module.category">
+        <field name="name">Video Club</field>
+        <field name="description">Permisos para gestionar películas y usuarios</field>
+        <field name="sequence">50</field>
+    </record>
+
+    <!-- Grupo: Usuario (solo puede ver sus propias películas) -->
+    <record id="grupo_usuario" model="res.groups">
+        <field name="name">Usuario: Solo sus películas</field>
+        <field name="category_id" ref="video_club.categoria_video_club"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- Grupo: Gerente del video club (puede ver todas las películas) -->
+    <record id="grupo_gerente" model="res.groups">
+        <field name="name">Gerente: Acceso Total</field>
+        <field name="category_id" ref="video_club.categoria_video_club"/>
+        <field name="implied_ids" eval="[(4, ref('video_club.grupo_usuario'))]"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+</odoo>

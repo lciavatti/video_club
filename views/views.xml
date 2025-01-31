@@ -1,0 +1,107 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="video_club.genero_tree">
+      <field name="name">video_club.genero.tree</field>
+      <field name="model">video_club.genero</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="comentario"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="video_club.genero_form">
+      <field name="name">video_club.genero.form</field>
+      <field name="model">video_club.genero</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="comentario"/>
+            <field name="pelicula">
+#           Una vista dentro de la otra
+              <tree>
+                <field name="name"/>
+                <field name="director"/>
+                <field name="duracion"/>
+              </tree>
+            </field>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="video_club.pelicula_tree">
+      <field name="name">video_club.pelicula.tree</field>
+      <field name="model">video_club.pelicula</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="director"/>
+          <field name="duracion"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="video_club.pelicula_form">
+      <field name="name">video_club.pelicula.form</field>
+      <field name="model">video_club.pelicula</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="director"/>
+            <field name="duracion"/>
+            <field name="industria"/>
+            <field name="fecha"/>
+            <field name="genero"/>
+            <field name="color" /> #widget="boolean_toggle" />
+            <field name="sinopsis"/>
+            <field name="imagen_portada" widget="image" string="Imagen Portada" class="oe_avatar" options="{'size': [128, 128]}"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="video_club.pelicula_kanban" model="ir.ui.view">
+    <field name="name">video_club.pelicula.kanban</field>
+    <field name="model">video_club.pelicula</field>
+    <field name="arch" type="xml">
+        <kanban>
+            <templates>
+                <t t-name="kanban-box">
+                  <div class="oe_kanban_global_click">
+                    <div>
+                        <strong><field name="name"/></strong>
+                    </div>
+                    <div>
+                        <small><field name="director"/></small>
+                    </div>
+                   <field name="imagen_portada" widget="image" class="oe_avatar" options="{'size': [60, 60]}"/>
+                  </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="video_club.genero_action_window">
+      <field name="name">Géneros</field>
+      <field name="res_model">video_club.genero</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="video_club.pelicula_action_window">
+      <field name="name">Películas</field>
+      <field name="res_model">video_club.pelicula</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem name="Video Club" id="video_club.menu_root" action="video_club.pelicula_action_window"/>
+    <menuitem name="Película" id="video_club.pelicula_menu" parent="video_club.menu_root" action="video_club.pelicula_action_window"/>
+    <menuitem name="Género" id="video_club.genero_menu" parent="video_club.menu_root" action="video_club.genero_action_window"/>
+
+  </data>
+</odoo>

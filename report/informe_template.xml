@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+      <template id="informe_pelicula_template">
+        <t t-call="web.html_container">
+          <t t-foreach="docs" t-as="pelicula">
+              <div class="page">
+                <div class="oe_structure"/>
+                  <div class="article" data-oe-model="video_club.pelicula" t-att-data-oe-id="pelicula.id">
+                      <h2 style="text-align: center;"><strong>Informe Película</strong></h2>
+                      <table class="table table-bordered; width: 100%; border: none;">
+                        <tr>
+                          <td><strong>Nombre:</strong></td>
+                          <td><t t-esc="pelicula.name"/></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Director:</strong></td>
+                          <td><t t-esc="pelicula.director"/></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Duración:</strong></td>
+                          <td><t t-esc="pelicula.duracion"/></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Género:</strong></td>
+                          <td><t t-esc="pelicula.genero.name"/></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Sinopsis:</strong></td>
+                          <td><t t-esc="pelicula.sinopsis"/></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Portada:</strong></td>
+                          <td>
+                              <img t-att-src="'data:image/png;base64,' + (pelicula.imagen_portada.decode('utf-8') if pelicula.imagen_portada else '')" style="max-width: 100px; max-height: 125px; border: 1px solid #000;"/>
+                          </td>
+                        </tr>
+                      </table>
+                  </div>
+                <div class="oe_structure"/>
+              </div>
+          </t>
+        </t>
+      </template>
+  </data>
+</odoo>

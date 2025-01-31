@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!-- Acción de impresión del reporte -->
+        <record id="action_report_pelicula" model="ir.actions.report">
+            <field name="name">Informe película</field>
+            <field name="model">video_club.pelicula</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">video_club.informe_pelicula_template</field>
+            <field name="report_file">video_club.informe_pelicula_template</field>
+            <field name="print_report_name">'Informe'</field>
+            <field name="binding_model_id" ref="video_club.model_video_club_pelicula"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>
