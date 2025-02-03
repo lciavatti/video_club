@@ -1,0 +1,25 @@
+<odoo>
+    <!-- Usuarios solo pueden ver sus propias películas -->
+    <record id="regla_usuario_peliculas" model="ir.rule">
+        <field name="name">Usuarios ven solo sus películas</field>
+        <field name="model_id" ref="model_video_club_pelicula"/>
+        <field name="groups" eval="[(4, ref('video_club.grupo_usuario'))]"/>
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <!-- Gerentes ven todas las películas -->
+    <record id="regla_gerente_ver_todas" model="ir.rule">
+        <field name="name">Gerente ve todas las películas</field>
+        <field name="model_id" ref="model_video_club_pelicula"/>
+        <field name="groups" eval="[(4, ref('video_club.grupo_gerente'))]"/>
+        <field name="domain_force">[]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+</odoo>

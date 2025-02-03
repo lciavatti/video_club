@@ -23,11 +23,13 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'security/grupos.xml',
+        'security/reglas_acceso.xml',
         'views/views.xml',
         'views/templates.xml',
         'report/informe_template.xml',
         'report/informe_pelicula.xml',
-        'security/grupos.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [
