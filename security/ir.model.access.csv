@@ -1,3 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-video_club.access_video_club_pelicula,access_video_club_pelicula,video_club.model_video_club_pelicula,base.group_user,1,1,1,1
-video_club.access_video_club_genero,access_video_club_genero,video_club.model_video_club_genero,base.group_user,1,1,1,1
+
+access_video_club_genero,access_video_club_genero,model_video_club_genero,base.group_user,1,1,1,1
+
+access_video_user,Usuario_Películas,model_video_club_pelicula,video_club.grupo_usuario,1,1,1,0
+
+access_video_admin,Admin_Películas,model_video_club_pelicula,video_club.grupo_gerente,1,1,1,1
