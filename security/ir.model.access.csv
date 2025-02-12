@@ -5,3 +5,5 @@ access_video_club_genero,access_video_club_genero,model_video_club_genero,base.g
 access_video_user,Usuario_Películas,model_video_club_pelicula,video_club.grupo_usuario,1,1,1,0
 
 access_video_admin,Admin_Películas,model_video_club_pelicula,video_club.grupo_gerente,1,1,1,1
+
+access_video_club_alquiler,access_video_club_alquiler,model_video_club_alquiler,base.group_user,1,1,1,1

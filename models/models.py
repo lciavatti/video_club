@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions
 #Importaciones:
 # models: Contiene las clases base de Odoo, como models.Model, que usamos para crear modelos.
 # fields: Proporciona los tipos de campos que podemos usar en los modelos (como Char, Boolean, Many2one, etc.).
@@ -38,7 +38,7 @@ class video_club_pelicula(models.Model):    #Define un modelo llamado video_club
                 # string="Género": Etiqueta visible.
                 # required=True: Hace que este campo sea obligatorio.
 
-
+    estado = fields.Selection([('disponible', 'Disponible'),('alquilada', 'Alquilada'),('no_disponible', 'No disponible')], string="Estado", default="disponible")
 
 class video_club_genero(models.Model):          #Define un modelo llamado video_club_genero
     _name = 'video_club.genero'                  # Nombre tecnico del modelo
@@ -55,5 +55,49 @@ class video_club_genero(models.Model):          #Define un modelo llamado video_
                     # "genero": Campo Many2one del modelo video_club.pelicula que establece la relación.
                     # Esto permite listar todas las películas asociadas a un género en su vista.
 
+class Alquiler(models.Model):
+    _name = 'video_club.alquiler'
+    _description = 'Registro de alquileres de películas'
+
+    pelicula_id = fields.Many2one('video_club.pelicula', string="Titulo", required=True)
+    usuario_id = fields.Many2one('res.partner', string="Cliente", required=True)
+    fecha_inicio = fields.Date(string="Fecha de inicio", required=True, default=fields.Date.today)
+    fecha_fin = fields.Date(string="Fecha de devolución")
+    estado_alquiler = fields.Selection([
+        ('pendiente', 'Pendiente'),
+        ('devuelto', 'Devuelto'),
+        ('retrasado', 'Retrasado')
+    ], string="Estado")
+
+    def name_get(self):
+        """Personaliza el nombre mostrado en la UI"""
+        result = []
+        for record in self:
+            name = f"{record.pelicula_id.name}" if record.pelicula_id else "Alquiler"
+            result.append((record.id, name))
+        return result
 
 
+    def alquilar_pelicula(self):
+        """ Método para alquilar una película """
+        for record in self:
+            if record.pelicula_id.estado != 'disponible':
+                raise exceptions.UserError("La película seleccionada no está disponible para alquiler.")
+
+            record.pelicula_id.estado = 'alquilada'  # Cambia el estado de la película
+            record.estado_alquiler = 'pendiente'  # Estado del alquiler
+
+    def devolver_pelicula(self):
+        """ Método para devolver una película """
+        for record in self:
+            if record.estado_alquiler != 'pendiente':
+                raise exceptions.UserError("Solo se pueden devolver películas en estado 'Pendiente'.")
+
+            record.pelicula_id.estado = 'disponible'  # Marca la película como disponible nuevamente
+            record.estado_alquiler = 'devuelto'  # Marca el alquiler como devuelto
+
+    def verificar_retraso(self):
+        """ Método para verificar si el alquiler está retrasado """
+        for record in self:
+            if record.fecha_fin and record.fecha_fin < fields.Date.today() and record.estado_alquiler == 'pendiente':
+                record.estado_alquiler = 'retrasado'

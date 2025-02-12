@@ -40,6 +40,7 @@
           <field name="name"/>
           <field name="director"/>
           <field name="duracion"/>
+          <field name="estado"/>
         </tree>
       </field>
     </record>
@@ -58,8 +59,47 @@
             <field name="genero"/>
             <field name="color" /> #widget="boolean_toggle" />
             <field name="sinopsis"/>
+            <field name="estado"/>
             <field name="imagen_portada" widget="image" string="Imagen Portada" class="oe_avatar" options="{'size': [128, 128]}"/>
           </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="video_club.alquiler_tree">
+      <field name="name">video_club.alquiler.tree</field>
+      <field name="model">video_club.alquiler</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="pelicula_id"/>
+            <field name="usuario_id"/>
+            <field name="fecha_inicio"/>
+            <field name="fecha_fin"/>
+            <field name="estado_alquiler"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="video_club.alquiler_form">
+      <field name="name">video_club.alquiler.form</field>
+      <field name="model">video_club.alquiler</field>
+      <field name="arch" type="xml">
+        <form>
+            <header>
+                <button name="alquilar_pelicula" type="object" string="Alquilar" class="btn-primary" attrs="{'invisible': [('estado_alquiler', '=', 'pendiente')]}"/>
+                <button name="devolver_pelicula" type="object" string="Devolver" class="btn-secondary" attrs="{'invisible': [('estado_alquiler', '!=', 'pendiente')]}"/>
+            </header>
+          <sheet>
+                <group>
+                    <field name="pelicula_id"/>
+                    <field name="usuario_id"/>
+                    <field name="fecha_inicio"/>
+                    <field name="fecha_fin"/>
+                    <field name="estado_alquiler" readonly="1"/>
+                </group>
+          </sheet>
+
         </form>
       </field>
     </record>
@@ -99,9 +139,16 @@
       <field name="view_mode">kanban,tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="video_club.alquiler_action_window">
+      <field name="name">Alquiler</field>
+      <field name="res_model">video_club.alquiler</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
     <menuitem name="Video Club" id="video_club.menu_root" action="video_club.pelicula_action_window"/>
     <menuitem name="Película" id="video_club.pelicula_menu" parent="video_club.menu_root" action="video_club.pelicula_action_window"/>
     <menuitem name="Género" id="video_club.genero_menu" parent="video_club.menu_root" action="video_club.genero_action_window"/>
+    <menuitem name="Alquiler" id="video_club.alquiler_menu" parent="video_club.menu_root" action="video_club.alquiler_action_window"/>
 
   </data>
 </odoo>
