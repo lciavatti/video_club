@@ -29,6 +29,7 @@
         'views/templates.xml',
         'report/informe_template.xml',
         'report/informe_pelicula.xml',
+        'data/cron_jobs.xml',
 
     ],
     # only loaded in demonstration mode

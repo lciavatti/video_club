@@ -87,8 +87,8 @@
       <field name="arch" type="xml">
         <form>
             <header>
-                <button name="alquilar_pelicula" type="object" string="Alquilar" class="btn-primary" attrs="{'invisible': [('estado_alquiler', '=', 'pendiente')]}"/>
-                <button name="devolver_pelicula" type="object" string="Devolver" class="btn-secondary" attrs="{'invisible': [('estado_alquiler', '!=', 'pendiente')]}"/>
+                <button name="alquilar_pelicula" type="object" string="Alquilar" class="btn-primary" attrs="{'invisible': [('estado_alquiler', 'not in', [False, 'devuelto'])]}"/>
+                <button name="devolver_pelicula" type="object" string="Devolver" class="btn-secondary" attrs="{'invisible': [('estado_alquiler', 'not in', ['pendiente', 'retrasado'])]}"/>
             </header>
           <sheet>
                 <group>

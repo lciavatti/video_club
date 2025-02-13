@@ -66,7 +66,8 @@ class Alquiler(models.Model):
     estado_alquiler = fields.Selection([
         ('pendiente', 'Pendiente'),
         ('devuelto', 'Devuelto'),
-        ('retrasado', 'Retrasado')
+        ('retrasado', 'Retrasado'),
+        ('devuelto_r','Devuelto retrasado')
     ], string="Estado")
 
     def name_get(self):
@@ -90,14 +91,16 @@ class Alquiler(models.Model):
     def devolver_pelicula(self):
         """ Método para devolver una película """
         for record in self:
-            if record.estado_alquiler != 'pendiente':
-                raise exceptions.UserError("Solo se pueden devolver películas en estado 'Pendiente'.")
+            if record.estado_alquiler =='retrasado':
+                record.estado_alquiler = 'devuelto_r' # Marca la película como devuelta con retraso
+            else:
+                record.estado_alquiler = 'devuelto'  # Marca el alquiler como devuelto
 
             record.pelicula_id.estado = 'disponible'  # Marca la película como disponible nuevamente
-            record.estado_alquiler = 'devuelto'  # Marca el alquiler como devuelto
+
 
     def verificar_retraso(self):
-        """ Método para verificar si el alquiler está retrasado """
-        for record in self:
-            if record.fecha_fin and record.fecha_fin < fields.Date.today() and record.estado_alquiler == 'pendiente':
+        """Método para verificar si el alquiler está retrasado"""
+        for record in self.search([('estado_alquiler', '=', 'pendiente')]):
+            if record.fecha_fin and record.fecha_fin < fields.Date.today():
                 record.estado_alquiler = 'retrasado'
