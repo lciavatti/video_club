@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api, exceptions
+from datetime import timedelta
+
 #Importaciones:
 # models: Contiene las clases base de Odoo, como models.Model, que usamos para crear modelos.
 # fields: Proporciona los tipos de campos que podemos usar en los modelos (como Char, Boolean, Many2one, etc.).
@@ -62,7 +64,17 @@ class Alquiler(models.Model):
     pelicula_id = fields.Many2one('video_club.pelicula', string="Titulo", required=True)
     usuario_id = fields.Many2one('res.partner', string="Cliente", required=True)
     fecha_inicio = fields.Date(string="Fecha de inicio", required=True, default=fields.Date.today)
-    fecha_fin = fields.Date(string="Fecha de devolución")
+
+    @api.depends('fecha_inicio')
+    def _compute_fecha_fin(self):
+        """ Calcula automáticamente la fecha de fin como fecha_inicio + 3 días """
+        for record in self:
+            if record.fecha_inicio:
+                record.fecha_fin = record.fecha_inicio + timedelta(days=2)
+            else:
+                record.fecha_fin = False
+
+    fecha_fin = fields.Date(string="Fecha de Fin", compute="_compute_fecha_fin", store=True)
     estado_alquiler = fields.Selection([
         ('pendiente', 'Pendiente'),
         ('devuelto', 'Devuelto'),
