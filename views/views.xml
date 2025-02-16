@@ -146,8 +146,8 @@
     </record>
 
     <menuitem name="Video Club" id="video_club.menu_root" action="video_club.pelicula_action_window"/>
-    <menuitem name="Película" id="video_club.pelicula_menu" parent="video_club.menu_root" action="video_club.pelicula_action_window"/>
-    <menuitem name="Género" id="video_club.genero_menu" parent="video_club.menu_root" action="video_club.genero_action_window"/>
+    <menuitem name="Película" id="video_club.pelicula_menu" parent="video_club.menu_root" sequence="1" action="video_club.pelicula_action_window"/>
+    <menuitem name="Género" id="video_club.genero_menu" parent="video_club.menu_root" sequence="2" action="video_club.genero_action_window"/>
     <menuitem name="Alquiler" id="video_club.alquiler_menu" parent="video_club.menu_root" action="video_club.alquiler_action_window"/>
 
   </data>
