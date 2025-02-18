@@ -94,6 +94,7 @@
                 <group>
                     <field name="pelicula_id"/>
                     <field name="usuario_id"/>
+                    <field name="telefono_cliente"/>
                     <field name="fecha_inicio"/>
                     <field name="fecha_fin"/>
                     <field name="estado_alquiler" readonly="1"/>

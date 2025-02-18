@@ -63,8 +63,8 @@ class Alquiler(models.Model):
 
     pelicula_id = fields.Many2one('video_club.pelicula', string="Titulo", required=True)
     usuario_id = fields.Many2one('res.partner', string="Cliente", required=True)
+    telefono_cliente= fields.Char(related ='usuario_id.phone', string='Teléfono')
     fecha_inicio = fields.Date(string="Fecha de inicio", required=True, default=fields.Date.today)
-
     @api.depends('fecha_inicio')
     def _compute_fecha_fin(self):
         """ Calcula automáticamente la fecha de fin como fecha_inicio + 3 días """
