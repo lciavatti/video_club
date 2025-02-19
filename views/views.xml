@@ -71,6 +71,9 @@
       <field name="model">video_club.alquiler</field>
       <field name="arch" type="xml">
         <tree>
+            <header>
+                    <button name="verificar_retraso" type="object" string="Verificar Retrasos" class="oe_highlight"/>
+            </header>
             <field name="pelicula_id"/>
             <field name="usuario_id"/>
             <field name="fecha_inicio"/>
