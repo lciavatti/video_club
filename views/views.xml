@@ -40,7 +40,7 @@
           <field name="name"/>
           <field name="director"/>
           <field name="duracion"/>
-          <field name="estado"/>
+          <field name="estado" widget="badge"/>
         </tree>
       </field>
     </record>
@@ -51,13 +51,13 @@
       <field name="arch" type="xml">
         <form>
           <group>
-            <field name="name"/>
+            <field name="name" placeholder="Título Película"/>
             <field name="director"/>
             <field name="duracion"/>
-            <field name="industria"/>
+            <field name="industria" widget="radio"/>
             <field name="fecha"/>
             <field name="genero"/>
-            <field name="color" /> #widget="boolean_toggle" />
+            <field name="color" widget="boolean_toggle" />
             <field name="sinopsis"/>
             <field name="estado"/>
             <field name="imagen_portada" widget="image" string="Imagen Portada" class="oe_avatar" options="{'size': [128, 128]}"/>
@@ -78,7 +78,7 @@
             <field name="usuario_id"/>
             <field name="fecha_inicio"/>
             <field name="fecha_fin"/>
-            <field name="estado_alquiler"/>
+            <field name="estado_alquiler" widget="badge"/>
         </tree>
       </field>
     </record>
@@ -92,15 +92,15 @@
             <header>
                 <button name="alquilar_pelicula" type="object" string="Alquilar" class="btn-primary" attrs="{'invisible': [('estado_alquiler', 'not in', [False, 'devuelto'])]}"/>
                 <button name="devolver_pelicula" type="object" string="Devolver" class="btn-secondary" attrs="{'invisible': [('estado_alquiler', 'not in', ['pendiente', 'retrasado'])]}"/>
+                <field name="estado_alquiler" widget="statusbar"/>
             </header>
           <sheet>
                 <group>
-                    <field name="pelicula_id"/>
+                    <field name="pelicula_id" />
                     <field name="usuario_id"/>
                     <field name="telefono_cliente"/>
                     <field name="fecha_inicio"/>
                     <field name="fecha_fin"/>
-                    <field name="estado_alquiler" readonly="1"/>
                 </group>
           </sheet>
 
@@ -140,7 +140,7 @@
     <record model="ir.actions.act_window" id="video_club.pelicula_action_window">
       <field name="name">Películas</field>
       <field name="res_model">video_club.pelicula</field>
-      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_mode">tree,kanban,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="video_club.alquiler_action_window">

@@ -24,7 +24,7 @@ class video_club_pelicula(models.Model):    #Define un modelo llamado video_club
     director = fields.Char(string="Director",required=True, help="Introduce el director")
     color = fields.Boolean(string="Color", default=True)
     duracion = fields.Integer(string="Duración (minutos)")
-    industria = fields.Selection([('0','Hollywood'),('1','Europea'),('2','Bollywood'),('3','Otras')],default="1",string="Industria")
+    industria = fields.Selection([('0','Hollywood'),('1','Europea'),('2','Bollywood'),('3','Otras')],default="0",string="Industria")
                     #fields.Selection: Permite seleccionar un valor de una lista de opciones.
                     # [('0', 'Hollywood'), ...]: Define las opciones disponibles como pares clave-valor.
                     # default="1": Establece el valor predeterminado como “Europea”.
@@ -77,8 +77,8 @@ class Alquiler(models.Model):
     fecha_fin = fields.Date(string="Fecha de Fin", compute="_compute_fecha_fin", store=True)
     estado_alquiler = fields.Selection([
         ('pendiente', 'Pendiente'),
-        ('devuelto', 'Devuelto'),
         ('retrasado', 'Retrasado'),
+        ('devuelto', 'Devuelto'),
         ('devuelto_r','Devuelto retrasado')
     ], string="Estado")
 
