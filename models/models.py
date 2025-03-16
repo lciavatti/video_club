@@ -46,7 +46,7 @@ class video_club_genero(models.Model):          #Define un modelo llamado video_
     _name = 'video_club.genero'                  # Nombre tecnico del modelo
     _description = 'Género cinematográfico'      # Descripcion breve del modelo
 
-    #Definicion de los campos del modelo
+    #Definicion de los cam.partpos del modelo
     name = fields.Char(string= "Género",required=True, help="Introduce el género cinematográfico")  #campo para el nombre del genero
     comentario = fields.Text(string="Comentarios")
 

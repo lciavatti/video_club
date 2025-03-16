@@ -140,7 +140,7 @@
     <record model="ir.actions.act_window" id="video_club.pelicula_action_window">
       <field name="name">Películas</field>
       <field name="res_model">video_club.pelicula</field>
-      <field name="view_mode">tree,kanban,form</field>
+      <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="video_club.alquiler_action_window">

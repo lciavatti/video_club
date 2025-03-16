@@ -1,0 +1,357 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* video_club
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-23 19:21+0000\n"
+"PO-Revision-Date: 2025-02-23 19:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: video_club
+#: model_terms:ir.ui.view,arch_db:video_club.genero_form
+msgid "#           Una vista dentro de la otra"
+msgstr ""
+
+#. module: video_club
+#: model:ir.actions.report,print_report_name:video_club.action_report_pelicula
+msgid "'Informe'"
+msgstr "'Rapportoi'"
+
+#. module: video_club
+#: model_terms:ir.ui.view,arch_db:video_club.informe_pelicula_template
+msgid "<strong>Director:</strong>"
+msgstr "<strong>Direttore:</strong>"
+
+#. module: video_club
+#: model_terms:ir.ui.view,arch_db:video_club.informe_pelicula_template
+msgid "<strong>Duración:</strong>"
+msgstr "<strong>Durata:</strong>"
+
+#. module: video_club
+#: model_terms:ir.ui.view,arch_db:video_club.informe_pelicula_template
+msgid "<strong>Género:</strong>"
+msgstr "<strong>Genere:</strong>"
+
+#. module: video_club
+#: model_terms:ir.ui.view,arch_db:video_club.informe_pelicula_template
+msgid "<strong>Informe Película</strong>"
+msgstr "<strong>Ripporti sul film</strong>"
+
+#. module: video_club
+#: model_terms:ir.ui.view,arch_db:video_club.informe_pelicula_template
+msgid "<strong>Nombre:</strong>"
+msgstr "<strong>Nome:</strong>"
+
+#. module: video_club
+#: model_terms:ir.ui.view,arch_db:video_club.informe_pelicula_template
+msgid "<strong>Portada:</strong>"
+msgstr ""
+
+#. module: video_club
+#: model_terms:ir.ui.view,arch_db:video_club.informe_pelicula_template
+msgid "<strong>Sinopsis:</strong>"
+msgstr "Sinossi"
+
+#. module: video_club
+#: model:ir.model.fields.selection,name:video_club.selection__video_club_pelicula__estado__alquilada
+msgid "Alquilada"
+msgstr "Affittato"
+
+#. module: video_club
+#: model_terms:ir.ui.view,arch_db:video_club.alquiler_form
+msgid "Alquilar"
+msgstr "Affittare"
+
+#. module: video_club
+#: model:ir.actions.act_window,name:video_club.alquiler_action_window
+#: model:ir.ui.menu,name:video_club.alquiler_menu
+msgid "Alquiler"
+msgstr "Affitto"
+
+#. module: video_club
+#: model:ir.model.fields.selection,name:video_club.selection__video_club_pelicula__industria__2
+msgid "Bollywood"
+msgstr "Bollywood"
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_alquiler__usuario_id
+msgid "Cliente"
+msgstr "Cliente"
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__color
+msgid "Color"
+msgstr "Colore"
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_genero__comentario
+msgid "Comentarios"
+msgstr "Commenti"
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_alquiler__create_uid
+#: model:ir.model.fields,field_description:video_club.field_video_club_genero__create_uid
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_alquiler__create_date
+#: model:ir.model.fields,field_description:video_club.field_video_club_genero__create_date
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: video_club
+#: model_terms:ir.ui.view,arch_db:video_club.alquiler_form
+msgid "Devolver"
+msgstr "Ritorno"
+
+#. module: video_club
+#: model:ir.model.fields.selection,name:video_club.selection__video_club_alquiler__estado_alquiler__devuelto
+msgid "Devuelto"
+msgstr "Restituito"
+
+#. module: video_club
+#: model:ir.model.fields.selection,name:video_club.selection__video_club_alquiler__estado_alquiler__devuelto_r
+msgid "Devuelto retrasado"
+msgstr "Rientrato in ritardo"
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__director
+msgid "Director"
+msgstr "Direttore"
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_alquiler__display_name
+#: model:ir.model.fields,field_description:video_club.field_video_club_genero__display_name
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields.selection,name:video_club.selection__video_club_pelicula__estado__disponible
+msgid "Disponible"
+msgstr "Disponibile"
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__duracion
+msgid "Duración (minutos)"
+msgstr "Durata (minuti)"
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_alquiler__estado_alquiler
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__estado
+msgid "Estado"
+msgstr "Stato"
+
+#. module: video_club
+#: model:ir.model.fields.selection,name:video_club.selection__video_club_pelicula__industria__1
+msgid "Europea"
+msgstr "Europea"
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_alquiler__fecha_fin
+msgid "Fecha de Fin"
+msgstr "Data di fine"
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_alquiler__fecha_inicio
+msgid "Fecha de inicio"
+msgstr "Data di inizio"
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__fecha
+msgid "Fecha estreno España"
+msgstr "Data di uscita Spagna"
+
+#. module: video_club
+#: model:res.groups,name:video_club.grupo_gerente
+msgid "Gerente: Acceso Total"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model,name:video_club.model_video_club_pelicula
+msgid "Gestion de películas"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_genero__name
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__genero
+#: model:ir.ui.menu,name:video_club.genero_menu
+msgid "Género"
+msgstr "Genere"
+
+#. module: video_club
+#: model:ir.model,name:video_club.model_video_club_genero
+msgid "Género cinematográfico"
+msgstr ""
+
+#. module: video_club
+#: model:ir.actions.act_window,name:video_club.genero_action_window
+msgid "Géneros"
+msgstr "Genere"
+
+#. module: video_club
+#: model:ir.model.fields.selection,name:video_club.selection__video_club_pelicula__industria__0
+msgid "Hollywood"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_alquiler__id
+#: model:ir.model.fields,field_description:video_club.field_video_club_genero__id
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__id
+msgid "ID"
+msgstr ""
+
+#. module: video_club
+#: model_terms:ir.ui.view,arch_db:video_club.pelicula_form
+msgid "Imagen Portada"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__imagen_portada
+msgid "Imagen portada"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__industria
+msgid "Industria"
+msgstr ""
+
+#. module: video_club
+#: model:ir.actions.report,name:video_club.action_report_pelicula
+msgid "Informe película"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,help:video_club.field_video_club_pelicula__director
+msgid "Introduce el director"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,help:video_club.field_video_club_genero__name
+msgid "Introduce el género cinematográfico"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,help:video_club.field_video_club_pelicula__name
+msgid "Introduce el título de la película"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_alquiler____last_update
+#: model:ir.model.fields,field_description:video_club.field_video_club_genero____last_update
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_alquiler__write_uid
+#: model:ir.model.fields,field_description:video_club.field_video_club_genero__write_uid
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_alquiler__write_date
+#: model:ir.model.fields,field_description:video_club.field_video_club_genero__write_date
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields.selection,name:video_club.selection__video_club_pelicula__estado__no_disponible
+msgid "No disponible"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields.selection,name:video_club.selection__video_club_pelicula__industria__3
+msgid "Otras"
+msgstr ""
+
+#. module: video_club
+#: model:ir.ui.menu,name:video_club.pelicula_menu
+msgid "Película"
+msgstr "Film"
+
+#. module: video_club
+#: model:ir.actions.act_window,name:video_club.pelicula_action_window
+#: model:ir.model.fields,field_description:video_club.field_video_club_genero__pelicula
+msgid "Películas"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields.selection,name:video_club.selection__video_club_alquiler__estado_alquiler__pendiente
+msgid "Pendiente"
+msgstr ""
+
+#. module: video_club
+#: model:ir.module.category,description:video_club.categoria_video_club
+msgid "Permisos para gestionar películas y usuarios"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model,name:video_club.model_video_club_alquiler
+msgid "Registro de alquileres de películas"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields.selection,name:video_club.selection__video_club_alquiler__estado_alquiler__retrasado
+msgid "Retrasado"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__sinopsis
+msgid "Sinopsis"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_alquiler__telefono_cliente
+msgid "Teléfono"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_alquiler__pelicula_id
+msgid "Titulo"
+msgstr ""
+
+#. module: video_club
+#: model:ir.model.fields,field_description:video_club.field_video_club_pelicula__name
+msgid "Título"
+msgstr ""
+
+#. module: video_club
+#: model_terms:ir.ui.view,arch_db:video_club.pelicula_form
+msgid "Título Película"
+msgstr ""
+
+#. module: video_club
+#: model:res.groups,name:video_club.grupo_usuario
+msgid "Usuario: Solo sus películas"
+msgstr ""
+
+#. module: video_club
+#: model:ir.actions.server,name:video_club.cron_verificar_retraso_ir_actions_server
+#: model:ir.cron,cron_name:video_club.cron_verificar_retraso
+msgid "Verificar Alquiler Retrasado"
+msgstr ""
+
+#. module: video_club
+#: model_terms:ir.ui.view,arch_db:video_club.alquiler_tree
+msgid "Verificar Retrasos"
+msgstr ""
+
+#. module: video_club
+#: model:ir.module.category,name:video_club.categoria_video_club
+#: model:ir.ui.menu,name:video_club.menu_root
+msgid "Video Club"
+msgstr ""
